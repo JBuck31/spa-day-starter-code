@@ -5,6 +5,14 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String verify;
+
+    public User(String username, String email, String password, String verify) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.verify = verify;
+    }
 
     public String getUsername() {
         return username;
@@ -28,5 +36,23 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getVerify() {
+        return verify;
+    }
+
+    public void setVerify(String verify) {
+        this.verify = verify;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", verify='" + verify + '\'' +
+                '}';
     }
 }
