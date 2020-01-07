@@ -13,6 +13,10 @@ configurations {
 	runtimeClasspath {
 		extendsFrom developmentOnly
 	}
+
+	bootRun {
+		sourceResources sourceSets.main
+	}
 }
 
 repositories {

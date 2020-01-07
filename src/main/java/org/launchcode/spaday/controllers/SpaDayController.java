@@ -17,11 +17,16 @@ public class SpaDayController {
     }
 
     @PostMapping
-    public String spaMenu(@RequestParam String skintype, @RequestParam String manipedi, Model model) {
+    public String spaMenu(@RequestParam String skintype, @RequestParam String manipedi, String name, String appropriateFacials, Model model) {
 
         Client newClient = new Client(skintype, manipedi);
         newClient.setAppropriateFacials(skintype);
         model.addAttribute("client" , newClient);
+
+        model.addAttribute("name", name);
+        model.addAttribute("skintype",  skintype);
+        model.addAttribute("manipedi",  manipedi);
+        model.addAttribute("appropriateFacials", appropriateFacials);
 
         return "menu";
     }
